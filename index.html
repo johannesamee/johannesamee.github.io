@@ -1,109 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-  <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-  <link rel="icon" href="https://www.johannesamee.com/ja_favicon_transparent.png">
-  <!-- To use social readers via microsub, follow these steps.
-    (Details: https://indieweb.org/Microsub#Getting_Started)
-    1. After publishing this to your domain, sign in to https://aperture.p3k.io/login with your domain
-    2. You will see a <link> tag displayed on your dashboard that looks like:
-      <link rel="microsub" href="https://aperture.p3k.io/microsub/000">
-    3. Copy that <link> tag and paste it after this HTML comment.
-    4. Publish the updated page!
-   -->
-  <title>J-Amée Web</title>
-  <style>
-    @media (prefers-color-scheme: dark) {
-      html { background-color: #111111; color: #fbfbfb; }
-      a { color: #ca8465; }
-    }
-    body {
-        background-color: #f0ecf4;
-      line-height: 1.6;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-      margin: 1rem auto;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    img.u-photo { border-radius: 50%; }
-    ul { padding: 0; list-style: none; }
-    .articles-wrapper {
-        display: flex;
-        gap: 20px;
-        width: 600px;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-    }
-    .articles-wrapper article {
-        scroll-snap-align: center;
-        box-sizing: border-box;
-        padding: 20px 30px;
-        flex-shrink: 0;
-        width: 600px;
-        background-color: white;
-        border-radius: 14px;
-        text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <main class="h-card" rel="author">
-      <img class="u-photo" alt="My profile photo" src="https://www.johannesamee.com/avatar.jpeg" />
-    <h1>
-      I'm <span class="p-name">Johannes Amée</span>.
-    </h1>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+        <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+        <link
+            rel="icon"
+            href="https://www.johannesamee.com/ja_favicon_transparent.png"
+        />
+        <title>J-Amée Web</title>
+        <style>
+            @media (prefers-color-scheme: dark) {
+                html {
+                    background-color: #111111;
+                    color: #fbfbfb;
+                }
+                a {
+                    color: #ca8465;
+                }
+            }
+            body {
+                background-color: #f0ecf4;
+                line-height: 1.6;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    Roboto,
+                    Helvetica,
+                    Arial,
+                    sans-serif;
+                text-align: center;
+                margin: 1rem auto;
+                min-height: 90vh;
+                width: min(90%, 1024px);
+            }
+            main {
+                display: grid;
+                grid-template-columns: 1fr 256px;
+            }
+            aside {
+            }
+            img.u-photo {
+                border-radius: 50%;
+                width: 100%;
+            }
+            ul {
+                padding: 0;
+                list-style: none;
+            }
+            .cards {
+                width: min(90%, 600px);
+            }
+            .articles-wrapper {
+                display: flex;
+                gap: 20px;
+                width: 100%;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+            }
+            .articles-wrapper article {
+                scroll-snap-align: center;
+                box-sizing: border-box;
+                padding: 20px 30px;
+                flex-shrink: 0;
+                width: 100%;
+                background-color: white;
+                border-radius: 14px;
+                text-align: center;
+            }
+            header {
+                background: linear-gradient(to right, red, blue);
+                background-clip: text;
+                color: transparent;
+            }
+        </style>
+    </head>
 
-    <p class="p-note">
-      Welcome to my website.
-    </p>
+    <body>
+        <header>
+            <h1>Johannes Amée Web</h1>
+        </header>
 
-    <ul>
-      <li><a class="u-uid u-url" href="https://www.johannesamee.com/" rel="me">johannesamee.com</a></li>
-      <li><a class="u-uid u-url" href="https://github.com/johannesamee" rel="me">github.com/johannesamee</a></li>
-    </ul>
-  </main>
+        <main>
+            <section class="cards">
+                <h1>Cards</h1>
+                <div class="articles-wrapper">
+                    <article class="h-entry">
+                        <h1 class="p-name">Links for indie web</h1>
+                        <p>
+                            Published by
+                            <a class="p-author h-card" href="">Johannes Amée</a>
+                            on
+                            <time
+                                class="dt-published"
+                                datetime="2024-09-23 09:40"
+                                >23<sup>rd</sup> September 2024</time
+                            >
+                        </p>
+                        <section class="e-content">
+                            <h1>List</h1>
+                            <p class="p-summary">
+                                List of pages and resources related to indie web
+                                / personal web
+                            </p>
 
-  <div class="articles-wrapper">
-    <article class="h-entry">
-        <h1 class="p-name">Links for indie web</h1>
-        <p>Published by <a class="p-author h-card" href="">Johannes Amée</a>
-        on <time class="dt-published" datetime="2024-09-23 09:40">23<sup>rd</sup> September 2024</time></p>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="https://discourse.32bit.cafe/t/resources-list-for-the-personal-web/49"
+                                        >Resources List for the Personal Web |
+                                        32-bit café</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://psychcool.org/links/Personal%20Web%20Map.pdf"
+                                        >Map of resources from youtube video</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="https://indieweb.org/article"
+                                        >Indieweb wiki about articles</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="https://search.marginalia.nu/"
+                                        >Search engine for indie webish</a
+                                    >
+                                </li>
+                            </ul>
+                        </section>
+                    </article>
+                    <article class="h-entry">
+                        <h1 class="p-name">Article number two</h1>
+                        <p>
+                            Published by
+                            <a class="p-author h-card" href="">Johannes Amée</a>
+                            on
+                            <time
+                                class="dt-published"
+                                datetime="2024-09-23 09:40"
+                                >27<sup>rd</sup> September 2024</time
+                            >
+                        </p>
 
-        <p class="p-summary">List of pages and resources related to indie web / personal web</p>
+                        <p class="p-summary">To be added</p>
 
-        <div class="e-content">
-        <ul>
-            <li><a href="https://discourse.32bit.cafe/t/resources-list-for-the-personal-web/49">Resources List for the Personal Web | 32-bit café</a></li>
-            <li><a href="https://psychcool.org/links/Personal%20Web%20Map.pdf">Map of resources from youtube video</a></li>
-            <li><a href="https://indieweb.org/article">Indieweb wiki about articles</a></li>
-            <li><a href="https://search.marginalia.nu/">Search engine for indie webish</a></li>
-        </ul>
-        </div>
-    </article>
-    <article class="h-entry">
-        <h1 class="p-name">Article number two</h1>
-        <p>Published by <a class="p-author h-card" href="">Johannes Amée</a>
-        on <time class="dt-published" datetime="2024-09-23 09:40">27<sup>rd</sup> September 2024</time></p>
+                        <div class="e-content">
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <aside class="h-card" rel="author">
+                <img
+                    class="u-photo"
+                    alt="My profile photo"
+                    src="https://www.johannesamee.com/avatar.jpeg"
+                />
+                <h2>I'm <span class="p-name">Johannes Amée</span>.</h2>
 
-        <p class="p-summary">To be added</p>
+                <p class="p-note">Welcome to my website.</p>
 
-        <div class="e-content">
-        <ul>
-            <li>List item 1</li>
-            <li>List item 2</li>
-        </ul>
-        </div>
-    </article>
-  </div>
-
-</body>
-
+                <ul>
+                    <li>
+                        <a
+                            class="u-uid u-url"
+                            href="https://www.johannesamee.com/"
+                            rel="me"
+                            >johannesamee.com</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="u-uid u-url"
+                            href="https://github.com/johannesamee"
+                            rel="me"
+                            >github.com/johannesamee</a
+                        >
+                    </li>
+                </ul>
+            </aside>
+        </main>
+    </body>
 </html>
