@@ -40,6 +40,7 @@
             main {
                 display: grid;
                 grid-template-columns: 1fr 256px;
+                gap: 4rem;
             }
             aside {
             }
@@ -52,7 +53,6 @@
                 list-style: none;
             }
             .cards {
-                width: min(90%, 600px);
             }
             .articles-wrapper {
                 display: flex;
@@ -72,92 +72,169 @@
                 text-align: center;
             }
             header {
+                text-align: left;
+            }
+            header a {
+                text-decoration: none;
+            }
+
+            main > :first-child {
+                grid-column: 1/-1;
+                text-align: left;
+            }
+            hgroup h1 {
                 background: linear-gradient(to right, red, blue);
                 background-clip: text;
                 color: transparent;
+                width: fit-content;
+                font-size: 3em;
+                margin-bottom: 0;
+            }
+            hgroup p {
+                margin: 0;
+            }
+            .article-list {
+                text-align: left;
+            }
+            .article-list article a {
+                display: flex;
+                justify-content: space-between;
+                text-decoration: none;
+                color: rgb(86 148 159);
+                font-weight: 600;
+            }
+            .article-list article a:hover {
+                color: rgb(40 105 131);
+            }
+            .article-list article a time::after {
+                content: "";
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%235f6368%22%3E%3Cpath%20d%3D%22M200-80q-33%200-56.5-23.5T120-160v-560q0-33%2023.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33%200%2056.5%2023.5T840-720v560q0%2033-23.5%2056.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0%200v-80%2080Zm280%20240q-17%200-28.5-11.5T440-440q0-17%2011.5-28.5T480-480q17%200%2028.5%2011.5T520-440q0%2017-11.5%2028.5T480-400Zm-160%200q-17%200-28.5-11.5T280-440q0-17%2011.5-28.5T320-480q17%200%2028.5%2011.5T360-440q0%2017-11.5%2028.5T320-400Zm320%200q-17%200-28.5-11.5T600-440q0-17%2011.5-28.5T640-480q17%200%2028.5%2011.5T680-440q0%2017-11.5%2028.5T640-400ZM480-240q-17%200-28.5-11.5T440-280q0-17%2011.5-28.5T480-320q17%200%2028.5%2011.5T520-280q0%2017-11.5%2028.5T480-240Zm-160%200q-17%200-28.5-11.5T280-280q0-17%2011.5-28.5T320-320q17%200%2028.5%2011.5T360-280q0%2017-11.5%2028.5T320-240Zm320%200q-17%200-28.5-11.5T600-280q0-17%2011.5-28.5T640-320q17%200%2028.5%2011.5T680-280q0%2017-11.5%2028.5T640-240Z%22%2F%3E%3C%2Fsvg%3E");
+                background-size: cover;
+                margin-left: 8px;
+                vertical-align: top;
             }
         </style>
     </head>
 
     <body>
         <header>
-            <h1>Johannes Amée Web</h1>
+            <a href="index.html">Johannes Amée Web</a>
         </header>
-
         <main>
-            <section class="cards">
-                <h1>Cards</h1>
-                <div class="articles-wrapper">
-                    <article class="h-entry">
-                        <h1 class="p-name">Links for indie web</h1>
-                        <p>
-                            Published by
-                            <a class="p-author h-card" href="">Johannes Amée</a>
-                            on
-                            <time
-                                class="dt-published"
-                                datetime="2024-09-23 09:40"
-                                >23<sup>rd</sup> September 2024</time
-                            >
-                        </p>
-                        <section class="e-content">
-                            <h1>List</h1>
-                            <p class="p-summary">
-                                List of pages and resources related to indie web
-                                / personal web
+            <hgroup>
+                <h1>Notebook</h1>
+                <p>Built with HTML and CSS only</p>
+            </hgroup>
+            <section>
+                <section class="article-list">
+                    <article>
+                        <a href="">
+                            <header>Title 1...</header>
+                            <time datetime="2024-9-27">Sep 27, 2024</time>
+                        </a>
+                    </article>
+                    <article>
+                        <a href=""
+                            >Longer Title 2...
+                            <time datetime="2024-9-26">Sep 26, 2024</time>
+                        </a>
+                    </article>
+                    <article>
+                        <a href=""
+                            >Title 3...
+                            <time datetime="2024-9-25">Sep 25, 2024</time>
+                        </a>
+                    </article>
+                    <article>
+                        <a href=""
+                            >Title 4...
+                            <time datetime="2024-9-24">Sep 24, 2024</time>
+                        </a>
+                    </article>
+                </section>
+                <section class="cards">
+                    <h2>Cards</h2>
+                    <div class="articles-wrapper">
+                        <article class="h-entry">
+                            <h1 class="p-name">Links for indie web</h1>
+                            <p>
+                                Published by
+                                <a class="p-author h-card" href=""
+                                    >Johannes Amée</a
+                                >
+                                on
+                                <time
+                                    class="dt-published"
+                                    datetime="2024-09-23 09:40"
+                                    >23<sup>rd</sup> September 2024</time
+                                >
+                            </p>
+                            <section class="e-content">
+                                <h1>List</h1>
+                                <p class="p-summary">
+                                    List of pages and resources related to indie
+                                    web / personal web
+                                </p>
+
+                                <ul>
+                                    <li>
+                                        <a
+                                            href="https://discourse.32bit.cafe/t/resources-list-for-the-personal-web/49"
+                                            >Resources List for the Personal Web
+                                            | 32-bit café</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://psychcool.org/links/Personal%20Web%20Map.pdf"
+                                            >Map of resources from youtube
+                                            video</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="https://indieweb.org/article"
+                                            >Indieweb wiki about articles</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="https://search.marginalia.nu/"
+                                            >Search engine for indie webish</a
+                                        >
+                                    </li>
+                                </ul>
+                            </section>
+                        </article>
+                        <article class="h-entry">
+                            <h1 class="p-name">Article number two</h1>
+                            <p>
+                                Published by
+                                <a class="p-author h-card" href=""
+                                    >Johannes Amée</a
+                                >
+                                on
+                                <time
+                                    class="dt-published"
+                                    datetime="2024-09-23 09:40"
+                                    >27<sup>rd</sup> September 2024</time
+                                >
                             </p>
 
-                            <ul>
-                                <li>
-                                    <a
-                                        href="https://discourse.32bit.cafe/t/resources-list-for-the-personal-web/49"
-                                        >Resources List for the Personal Web |
-                                        32-bit café</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://psychcool.org/links/Personal%20Web%20Map.pdf"
-                                        >Map of resources from youtube video</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="https://indieweb.org/article"
-                                        >Indieweb wiki about articles</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="https://search.marginalia.nu/"
-                                        >Search engine for indie webish</a
-                                    >
-                                </li>
-                            </ul>
-                        </section>
-                    </article>
-                    <article class="h-entry">
-                        <h1 class="p-name">Article number two</h1>
-                        <p>
-                            Published by
-                            <a class="p-author h-card" href="">Johannes Amée</a>
-                            on
-                            <time
-                                class="dt-published"
-                                datetime="2024-09-23 09:40"
-                                >27<sup>rd</sup> September 2024</time
-                            >
-                        </p>
+                            <p class="p-summary">To be added</p>
 
-                        <p class="p-summary">To be added</p>
-
-                        <div class="e-content">
-                            <ul>
-                                <li>List item 1</li>
-                                <li>List item 2</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
+                            <div class="e-content">
+                                <ul>
+                                    <li>List item 1</li>
+                                    <li>List item 2</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
             </section>
+
             <aside class="h-card" rel="author">
                 <img
                     class="u-photo"
