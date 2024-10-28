@@ -123,6 +123,13 @@
         <header>
             <a href="index.html">Johannes Amée Web</a>
         </header>
+        <script type="module">
+            import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+            Chatbot.init({
+                chatflowid: "62d2eece-95a3-45a9-b8e3-949bfb14ff03",
+                apiHost: "http://localhost:3000",
+            })
+        </script>
         <main>
             <hgroup>
                 <h1>Notebook</h1>
